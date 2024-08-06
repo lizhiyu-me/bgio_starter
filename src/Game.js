@@ -10,7 +10,7 @@ export const TicTacToe = {
             if (ctx.currentPlayer === '0') { // Assuming '0' is the human player
                 const aiMoves = TicTacToe.ai.enumerate(G, ctx);
                 if (aiMoves.length > 0) {
-                    const aiMove = aiMoves[0];
+                    const aiMove = aiMoves[Math.floor(Math.random() * aiMoves.length)];
                     G.cells[aiMove.args[0]] = "1";
                     events.pass()
                 }
